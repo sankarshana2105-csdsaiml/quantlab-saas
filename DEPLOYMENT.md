@@ -1,6 +1,10 @@
 # QuantLab deployment
 
-Status: source is public at [sankarshana2105-csdsaiml/quantlab-saas](https://github.com/sankarshana2105-csdsaiml/quantlab-saas); Render account authorization is required.
+Status: publicly deployed from [sankarshana2105-csdsaiml/quantlab-saas](https://github.com/sankarshana2105-csdsaiml/quantlab-saas).
+
+- Frontend: https://quantlab-web.onrender.com
+- Backend: https://quantlab-api-xhby.onrender.com
+- Health: https://quantlab-api-xhby.onrender.com/health
 
 ## One-time launch
 

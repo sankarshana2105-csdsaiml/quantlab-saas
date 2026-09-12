@@ -2,7 +2,7 @@
 
 **Python quantitative research + backtesting SaaS.**
 
-[GitHub repository](https://github.com/sankarshana2105-csdsaiml/quantlab-saas) · Public deployment pending Render authorization
+[Live demo](https://quantlab-web.onrender.com) · [API health](https://quantlab-api-xhby.onrender.com/health) · [GitHub repository](https://github.com/sankarshana2105-csdsaiml/quantlab-saas)
 
 QuantLab is a Python-first quantitative research SaaS for validating OHLCV data, running causally aligned backtests, and preserving user-owned experiments. It is built as a portfolio project around one principle: attractive results are meaningless unless the ledger, timing, costs, and out-of-sample boundaries are correct.
 
