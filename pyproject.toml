@@ -13,6 +13,9 @@ dependencies = ["alembic>=1.16", "email-validator>=2.2", "fastapi>=0.141", "nump
 dev = ["httpx>=0.28", "pytest>=8.0"]
 demo = ["matplotlib>=3.9"]
 
+[tool.setuptools.packages.find]
+include = ["quantlab*"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
