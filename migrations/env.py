@@ -4,13 +4,17 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
+from quantlab.database import normalize_database_url
 from quantlab.db_models import Base
 
 
 config = context.config
 if config.config_file_name:
     fileConfig(config.config_file_name)
-config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL", config.get_main_option("sqlalchemy.url")))
+config.set_main_option(
+    "sqlalchemy.url",
+    normalize_database_url(os.getenv("DATABASE_URL", config.get_main_option("sqlalchemy.url"))),
+)
 target_metadata = Base.metadata
 
 

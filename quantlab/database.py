@@ -12,12 +12,20 @@ from .db_models import Base
 DEFAULT_DATABASE_URL = "sqlite:///database/quantlab.db"
 
 
+def normalize_database_url(url: str) -> str:
+    if url.startswith("postgres://"):
+        return "postgresql+psycopg://" + url.removeprefix("postgres://")
+    if url.startswith("postgresql://"):
+        return "postgresql+psycopg://" + url.removeprefix("postgresql://")
+    return url
+
+
 def database_url() -> str:
-    return os.getenv("DATABASE_URL", DEFAULT_DATABASE_URL)
+    return normalize_database_url(os.getenv("DATABASE_URL", DEFAULT_DATABASE_URL))
 
 
 def create_database(url: str | None = None, *, initialize: bool = False) -> tuple[Engine, sessionmaker]:
-    resolved = url or database_url()
+    resolved = normalize_database_url(url) if url else database_url()
     parsed = make_url(resolved)
     options: dict[str, object] = {"pool_pre_ping": True}
     if parsed.drivername.startswith("sqlite"):

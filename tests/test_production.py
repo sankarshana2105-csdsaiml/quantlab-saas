@@ -4,7 +4,15 @@ from fastapi.testclient import TestClient
 from quantlab.api import create_app
 from quantlab.api.service import QuantService
 from quantlab.config import ConfigurationError, Settings
+from quantlab.database import database_url, normalize_database_url
 from quantlab.repository import RepositoryError
+
+
+def test_provider_postgres_urls_use_psycopg3(monkeypatch):
+    assert normalize_database_url("postgres://u:p@db/app") == "postgresql+psycopg://u:p@db/app"
+    assert normalize_database_url("postgresql://u:p@db/app") == "postgresql+psycopg://u:p@db/app"
+    monkeypatch.setenv("DATABASE_URL", "postgresql://u:p@db/app")
+    assert database_url() == "postgresql+psycopg://u:p@db/app"
 
 
 def test_production_configuration_requires_postgres_secret_and_cors(monkeypatch):
