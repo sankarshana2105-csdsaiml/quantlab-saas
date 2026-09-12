@@ -1,0 +1,13 @@
+import { ArrowRight, Check, Database, LineChart, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Logo } from "../components/Logo";
+
+export function Landing() {
+  return <div className="landing">
+    <header className="landing-nav"><Logo /><nav><Link to="/login">Sign in</Link><Link className="button small" to="/register">Create workspace</Link></nav></header>
+    <main className="hero"><div className="hero-copy"><div className="eyebrow">RESEARCH WITHOUT THE HAND-WAVING</div><h1>Backtests you can<br/><em>actually defend.</em></h1><p>Upload market data, configure a strategy, and inspect every return, drawdown, and completed trade through a validated next-open ledger.</p><div className="hero-actions"><Link className="button" to="/register">Start researching <ArrowRight size={17} /></Link><Link className="text-link" to="/login">Open your workspace</Link></div><div className="proof"><span><Check />Next-bar execution</span><span><Check />Trade-level costs</span><span><Check />Private research</span></div></div>
+      <div className="terminal-card" aria-label="Sample research summary"><div className="terminal-head"><span>QL / MOMENTUM_20_80</span><span className="status"><i />VALIDATED</span></div><div className="terminal-chart"><svg viewBox="0 0 560 210" preserveAspectRatio="none"><defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#74f0c4" stopOpacity=".28"/><stop offset="1" stopColor="#74f0c4" stopOpacity="0"/></linearGradient></defs><path className="gridline" d="M0 40H560M0 95H560M0 150H560"/><path className="area" d="M0 175L30 160 60 166 90 132 120 141 150 112 180 119 210 83 240 91 270 62 300 78 330 50 360 57 390 32 420 48 450 25 480 39 510 18 560 27V210H0Z"/><path className="line" d="M0 175L30 160 60 166 90 132 120 141 150 112 180 119 210 83 240 91 270 62 300 78 330 50 360 57 390 32 420 48 450 25 480 39 510 18 560 27"/></svg></div><div className="terminal-metrics"><div><small>CUMULATIVE RETURN</small><strong>+24.82%</strong></div><div><small>SHARPE</small><strong>1.34</strong></div><div><small>MAX DRAWDOWN</small><strong className="negative">−8.17%</strong></div></div></div>
+    </main>
+    <section className="landing-features"><article><Database/><h2>Bring your own bars</h2><p>Strict OHLCV validation catches broken timestamps and impossible prices before research begins.</p></article><article><LineChart/><h2>Audit every outcome</h2><p>Metrics, equity, drawdown, and completed trades stay tied to one reproducible run.</p></article><article><ShieldCheck/><h2>Your workspace, isolated</h2><p>Authenticated ownership keeps datasets and experiments scoped to the researcher.</p></article></section>
+  </div>;
+}

@@ -1,0 +1,15 @@
+{
+  "total_return": -0.18641609133376547,
+  "cumulative_return": -0.18641609133376547,
+  "annualized_return": -0.06654247877429809,
+  "cagr": -0.06880666572773923,
+  "sharpe_ratio": -0.6239336639767613,
+  "sortino_ratio": -0.8650404452304099,
+  "volatility": 0.10202339883097997,
+  "maximum_drawdown": -0.24095118256344994,
+  "win_rate": 0.25,
+  "profit_factor": 0.08951623843053037,
+  "trade_count": 4,
+  "exposure": 0.3086092715231788,
+  "turnover": 7.9972015591884125
+}
